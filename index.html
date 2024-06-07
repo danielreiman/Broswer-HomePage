@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <h2 id="greeting">Welcome</h2>
+            <h3>Ready for your next adventure in the web?</h3>
+            <form action="https://www.google.com/search" method="GET" class="search-form">
+                <input type="text" name="q" class="search-bar" placeholder="What are we searching for today?" autofocus>
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="quick-links">
+        <a href="https://www.netflix.com/browse" class="quick-link">Netflix</a>
+        <a href="https://chat.openai.com/" class="quick-link">ChatGPT</a>
+        <a href="https://www.apple.com/" class="quick-link">Apple</a>
+        <a href="https://www.apps.disneyplus.com/il/onboarding/profile" class="quick-link">Disney+</a>
+    </div>
+
+    <script>
+        const name = 'Daniel'
+        const greeting = document.getElementById('greeting');
+        const hour = new Date().getHours();
+        const welcomeMessages = {
+            morning: 'Good Morning',
+            afternoon: 'Good Afternoon',
+            evening: 'Good Evening',
+            night: 'Good Night'
+        };
+        if (hour < 12) {
+            greeting.textContent = welcomeMessages.morning + " " + name;
+        } else if (hour < 18) {
+            greeting.textContent = welcomeMessages.afternoon + " " + name;
+        } else if (hour < 22) {
+            greeting.textContent = welcomeMessages.evening + " " + name;
+        } else {
+            greeting.textContent = welcomeMessages.night + " " + name;
+        }
+    </script>
+</body>
+</html>
